@@ -15,8 +15,7 @@ app.set(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, 'public')));
 
 consign({})
-  .include('models')
-  .then('controllers')
+  .include('controllers')
   .then('routes')
   .into(app);
 
