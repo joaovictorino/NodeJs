@@ -3,16 +3,18 @@ module.exports = (app) => {
         index: function(req, res){
             res.render('home/index');
         },
-        login(req, res, next){
-            const {usuario} = req.body;
-            const {email, nome} = usuario;
-            if(email && nome){
-                usuario.contatos = [];
-                req.session.usuario = usuario;
-                res.redirect('/contatos');
-            }else{
+        login(req, res){
+            console.log(req);
+            console.log(req.body);
+            // const {usuario} = req.body;
+            // const {email, nome} = usuario;
+            // if(email && nome){
+            //     usuario.contatos = [];
+            //     req.session.usuario = usuario;
+                //  res.redirect('/contatos');
+            // }else{
                 res.redirect('/');
-            }
+            // }
         },
         logout(req, res){
             req.session.destroy();
