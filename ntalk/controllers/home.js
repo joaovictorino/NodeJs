@@ -4,6 +4,9 @@ module.exports = (app) => {
             res.render('home/index');
         },
         login(req, res){
+            console.log(req);
+            console.log(res);
+            
             const {usuario} = req.body;
             const {email, nome} = usuario;
             if(email && nome){

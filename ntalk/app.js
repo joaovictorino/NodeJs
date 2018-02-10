@@ -14,7 +14,7 @@ app.set(bodyParser.json());
 app.set(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, 'public')));
 
-consign({})
+consign()
   .include('models')
   .then('controllers')
   .then('routes')
